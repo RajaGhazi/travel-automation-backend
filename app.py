@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import asyncio
 from flight_scraper import fetch_flight_price
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def home():
